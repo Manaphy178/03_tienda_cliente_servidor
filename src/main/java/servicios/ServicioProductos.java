@@ -36,7 +36,7 @@ public class ServicioProductos extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		SombrerosDAO dao = new SombrerosDAOImpl();
-		ArrayList<Sombrero> sombrero = dao.obtenerSombrero();
+		List<Sombrero> sombrero = dao.obtenerSombrero();
 //		Ahora tengo que transformar los libros a json para darselos al cliente
 		
 		Gson gson = new Gson();

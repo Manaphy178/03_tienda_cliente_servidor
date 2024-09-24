@@ -6,7 +6,7 @@ import modelo.*;
 
 public interface SombrerosDAO {
 
-	ArrayList<Sombrero> obtenerSombrero();
+	List<Sombrero> obtenerSombrero();
 
 	void registrarSombrero(Sombrero s);
 

@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 @WebServlet("/ServletIdentificacionAdmin")
 public class ServletIdentificacionAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -22,8 +21,8 @@ public class ServletIdentificacionAdmin extends HttpServlet {
 			 * usuario como admin
 			 */
 			request.getSession().setAttribute("admin", "ok");
-			response.sendRedirect("admin/index.html");
-		}else {
+			response.sendRedirect("admin/index.jsp");
+		} else {
 			response.sendRedirect("login_admin.html");
 		}
 	}

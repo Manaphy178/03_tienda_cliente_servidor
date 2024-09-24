@@ -20,9 +20,9 @@ import modelo.Sombrero;
  */
 public class SombrerosDAOImpl extends MasterDAO implements SombrerosDAO {
 
-	public ArrayList<Sombrero> obtenerSombrero() {
+	public List<Sombrero> obtenerSombrero() {
 		super.conectar();
-		ArrayList<Sombrero> sombreros = new ArrayList<Sombrero>();
+		List<Sombrero> sombreros = new ArrayList<Sombrero>();
 		try {
 			Statement st = super.getCon().createStatement();
 			ResultSet rs = st.executeQuery(ConstantesSQL.SQL_OBTENER_SOMBREROS_NOMBRE);

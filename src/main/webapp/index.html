@@ -14,9 +14,6 @@
     <div style="text-align: center">
       Bienvenido a la parte publica de la tienda de libros
     </div>
-    <div>
-      <button id="boton_productos">VER LISTADO DE PRODUCTOS</button>
-    </div>
     <div id="contenedor">cargando...</div>
     <script src="jquery.js"></script>
     <script type="text/javascript">
@@ -31,28 +28,26 @@
       $("#contenedor").html("jquery importado correctamente");
       // Vamos a comunicarnos con el servicio de producto:
       // cuando se haga click en el boton
-      $("#boton_productos").click(function () {
-        alert("comenzamos comunicacion con el servicio");
-        $.ajax("ServicioProductos").done(function (respuesta) {
-          // vamos a procesar la respuesta con el json de los libros
-          // transformamos el json recibido a array de javascript:
-          let sombreros = JSON.parse(respuesta);
-          console.log(respuesta);
-          console.log(sombreros);
-          let texto_html = "";
-          for (s in sombreros) {
-            texto_html += "<div>";
-            texto_html +=
-              sombreros[s].nombre +
-              " " +
-              sombreros[s].desc +
-              " " +
-              sombreros[s].precio +
-              "&euro;";
-            texto_html += "</div>";
-          } //end for
-          $("#contenedor").html(texto_html);
-        });
+
+      $.ajax("ServicioProductos").done(function (respuesta) {
+        // vamos a procesar la respuesta con el json de los libros
+        // transformamos el json recibido a array de javascript:
+        let sombreros = JSON.parse(respuesta);
+        console.log(respuesta);
+        console.log(sombreros);
+        let texto_html = "";
+        for (s in sombreros) {
+          texto_html += "<div>";
+          texto_html +=
+            sombreros[s].nombre +
+            " " +
+            sombreros[s].desc +
+            " " +
+            sombreros[s].precio +
+            "&euro;";
+          texto_html += "</div>";
+        } //end for
+        $("#contenedor").html(texto_html);
       }); // fin ajax
     </script>
   </body>
